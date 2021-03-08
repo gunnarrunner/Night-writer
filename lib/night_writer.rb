@@ -22,7 +22,7 @@ class NightWriter
   # def txt.map do |input|
   #   find_braille(input)
   # end
-  def count_braille_txt
+  def self.count_braille_txt
     File.open("./text_files/#{ARGV[1]}", "a+") {|f| f.read.chomp}.length
   end
 
@@ -32,6 +32,6 @@ class NightWriter
 
   IO.copy_stream("./text_files/#{ARGV[0]}", "./text_files/#{ARGV[1]}")
 
-  puts "Created #{ARGV[1]} containing #{count_braille_txt} characters"
+  puts "Created #{ARGV[1]} containing #{self.count_braille_txt} characters"
 
 end
