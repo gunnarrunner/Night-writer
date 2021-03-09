@@ -19,9 +19,9 @@ class NightWriterTest < Minitest::Test
   def test_it_can_get_two_braille_letters
     skip
     night_writer = NightWriter.new("message.txt", "braille.txt")
-    input = "a"
-    expected = ["0.", "..", ".."]
-    puts expected
-    assert_equal expected, night_writer.find_braille(input)
+    input = "ab"
+    few_letters = ["0.", "..", ".."],["0.", "0.", ".."]
+    puts few_letters
+    assert_equal few_letters, night_writer.find_braille(input)
   end
 end

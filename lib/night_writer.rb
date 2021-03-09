@@ -26,11 +26,19 @@ class NightWriter
     File.open("./text_files/#{ARGV[1]}", "a+") {|f| f.read.chomp}.length
   end
 
+  def read_file
+    File.open("./text_files/#{ARGV[0]}", "a+").each do |input|
+      input.read.find_braille(input)
+    end
+  end
+
   # def translate
-  #   File.open("./text_files/#{ARGV[0]}", "a+") {|f| f.}
+  #   read.file.map do |input|
+  #     find_braille(input)
+  #   end
   # end
 
-  IO.copy_stream("./text_files/#{ARGV[0]}", "./text_files/#{ARGV[1]}")
+  # IO.copy_stream("./text_files/#{ARGV[0]}", "./text_files/#{ARGV[1]}")
 
   puts "Created #{ARGV[1]} containing #{self.count_braille_txt} characters"
 
